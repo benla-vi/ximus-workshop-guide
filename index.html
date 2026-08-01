@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nCode × XIMUS — מדריך הסדנה</title>
+<meta name="description" content="כל ה-SOP, הפרומפטים והקישורים של סדנת הסוכנים">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700;800&family=Archivo:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:#EDE4D3;color:#2B211A;font-family:Assistant,sans-serif;font-size:19px;line-height:1.6}
+header.top{position:sticky;top:0;z-index:60;background:#2B211A;color:#EDE4D3;border-bottom:4px solid #C05320}
+.top-in{max-width:1040px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{font-family:Archivo,sans-serif;font-weight:700;letter-spacing:.22em;font-size:15px;color:#EDE4D3}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-right:auto}
+nav a{color:#D8CCB6;text-decoration:none;font-size:15px;font-weight:600;padding:5px 11px;border-radius:3px}
+nav a:hover{background:#3A2E25;color:#EDE4D3}
+.hero{max-width:1040px;margin:0 auto;padding:56px 22px 26px}
+.hero h1{font-family:'Secular One',sans-serif;font-weight:400;font-size:clamp(34px,6vw,56px);line-height:1.15;margin:12px 0 0}
+.hero h1 em{font-style:normal;color:#C05320}
+.hero p{font-size:21px;color:#4A3B30;max-width:720px}
+.kick{display:flex;align-items:center;gap:12px;font-weight:700;color:#7A6A58;font-size:15px;letter-spacing:.08em}
+.kick i{display:block;width:38px;height:5px;background:#C05320}
+main{max-width:1040px;margin:0 auto;padding:0 22px 100px}
+section.sec{margin-top:52px;scroll-margin-top:96px}
+.sec-h{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid #DACDB5;padding-bottom:12px}
+.sec-h span{font-family:'Secular One',sans-serif;font-size:30px;color:#C05320}
+.sec-h h2{font-family:'Secular One',sans-serif;font-weight:400;font-size:32px;margin:0}
+h3{font-family:'Secular One',sans-serif;font-weight:400;font-size:25px;margin:30px 0 10px}
+a{color:#C05320;font-weight:600}
+code{background:#F6F0E4;border:1px solid #DACDB5;border-radius:3px;padding:1px 7px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em}
+ol.steps{list-style:none;padding:0;margin:14px 0;counter-reset:s}
+ol.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;background:#F6F0E4;border:1px solid #DACDB5;border-radius:4px;padding:14px 18px;margin-bottom:9px}
+ol.steps li::before{content:counter(s,decimal-leading-zero);font-family:'Secular One',sans-serif;color:#C05320;font-size:19px;min-width:26px}
+.chk{flex:0 0 22px;width:22px;height:22px;border:2px solid #DACDB5;border-radius:4px;cursor:pointer;margin-top:2px;background:#fff}
+.chk.on{background:#C05320;border-color:#C05320;position:relative}
+.chk.on::after{content:"✓";color:#fff;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+ol.steps li.done>div{opacity:.5;text-decoration:line-through}
+.note{background:#F6F0E4;border-inline-start:4px solid #7A6A58;border-radius:4px;padding:13px 17px;margin:14px 0;font-size:17.5px;color:#4A3B30}
+.note.warn{border-inline-start-color:#C05320;background:#F6EBE2}
+.note.ok{border-inline-start-color:#5C7A4A;background:#EFF2E6}
+.prompt{margin:16px 0;border:1px solid #DACDB5;border-radius:4px;overflow:hidden;background:#F6F0E4}
+.prompt-h{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#2B211A;color:#EDE4D3;padding:10px 16px;font-weight:700;font-size:16px}
+.prompt pre{margin:0;padding:16px 20px;white-space:pre-wrap;word-break:break-word;font-family:Assistant,sans-serif;font-size:17px;line-height:1.75;direction:rtl;text-align:right}
+button.copy{background:#C05320;color:#fff;border:0;border-radius:3px;padding:6px 15px;font-family:Assistant,sans-serif;font-weight:700;font-size:15px;cursor:pointer}
+button.copy.done{background:#5C7A4A}
+.ostabs{display:flex;gap:8px;margin:16px 0 4px}
+.ostab{background:#F6F0E4;border:1px solid #DACDB5;border-radius:4px;padding:8px 20px;font-family:Assistant,sans-serif;font-weight:700;font-size:16px;cursor:pointer;color:#4A3B30}
+.ostab.on{background:#2B211A;color:#EDE4D3;border-color:#2B211A}
+.osblock .os-win{display:none}
+body.win .osblock .os-mac{display:none}
+body.win .osblock .os-win{display:block}
+table.links{width:100%;border-collapse:collapse;margin-top:14px;font-size:17px}
+table.links th,table.links td{border:1px solid #DACDB5;padding:11px 14px;text-align:right;vertical-align:top}
+table.links th{background:#2B211A;color:#EDE4D3;font-size:15px;letter-spacing:.04em}
+table.links tr:nth-child(even) td{background:#F6F0E4}
+footer{border-top:2px solid #DACDB5;margin-top:60px;padding:26px 0;color:#7A6A58;font-size:15px;text-align:center}
+@media(max-width:640px){nav{display:none}.hero{padding-top:34px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <span class="brand">nCode × XIMUS</span>
+  <nav><a href="#start">לפני שמתחילים</a><a href="#agents">שני הסוכנים בוואטסאפ</a><a href="#meetings">סיכומי פגישות</a><a href="#claude-install">התקנת Claude</a><a href="#folder">התיקייה הראשונה</a><a href="#radar">רדאר · מודיעין תחרותי</a><a href="#links">כל הקישורים</a><a href="#stuck">כשנתקעים</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="kick"><i></i>מדריך הסדנה</div>
+  <h1>כל השלבים, <em>כפתור אחרי כפתור.</em></h1>
+  <p>הדף הזה מלווה אתכם לאורך כל הסדנה ואחריה. כל פרומפט להעתקה בלחיצה, כל קישור במקום אחד, וכל שלב עם סימן שאפשר לסמן. שמרו אותו — הוא נשאר אצלכם.</p>
+</div>
+
+<main>
+<section class="sec" id="start">
+  <div class="sec-h"><span>00</span><h2>לפני שמתחילים</h2></div>
+  
+    <div class="note ">כל מה שבדף הזה מסודר לפי סדר הסדנה. אפשר לגלול, ואפשר לקפוץ מהתפריט למעלה. תיבות הסימון נשמרות במחשב שלכם — אם תסגרו ותחזרו, תמשיכו מאיפה שהייתם.</div>
+    <ol class="steps"><li><span class="chk"></span><div>מחשב נייד טעון, ועכבר אם נוח לכם.</div></li><li><span class="chk"></span><div>חיבור לרשת האלחוטית של המקום.</div></li><li><span class="chk"></span><div>טלפון בהישג יד — נצטרך אותו לסריקת קוד ולחיבור וואטסאפ.</div></li><li><span class="chk"></span><div>כתובת מייל שאתם יכולים להתחבר אליה עכשיו.</div></li></ol>
+    <div class="note warn"><b>מחשב ארגוני?</b> אם ההתקנות חסומות אצלכם — אל תעקפו את מדיניות ה-IT. הרימו יד למנטור, יש מסלול עוקף שעובד בדפדפן בלבד.</div>
+</section>
+<section class="sec" id="agents">
+  <div class="sec-h"><span>01</span><h2>שני הסוכנים בוואטסאפ</h2></div>
+  
+    <h3>א. הרשמה</h3>
+    <ol class="steps"><li><span class="chk"></span><div>סורקים את קוד ה-QR מהמצגת, או פותחים את <a href="https://base44.pxf.io/c/7338539/3820726/25619?subId1=NC&subId2=Course&sharedid=BL&trafcat=agent" target="_blank" rel="noopener">הקישור הזה</a>.</div></li><li><span class="chk"></span><div><b>אם אי פעם נכנסתם לאתר בעבר</b> — פתחו קודם חלון גלישה בסתר, אחרת ההנחה לא תופיע.</div></li><li><span class="chk"></span><div>יוצרים חשבון עם המייל שלכם.</div></li><li><span class="chk"></span><div><b>בוחרים מנוי שנתי</b> — הנחת ה-30% תופסת רק עליו.</div></li></ol>
+
+    <h3>ב. מקימים את הסוכן</h3>
+    <ol class="steps"><li><span class="chk"></span><div>יוצרים אפליקציה חדשה ובוחרים לה שם.</div></li><li><span class="chk"></span><div>מתארים בעברית, במילים שלכם, מה הסוכן צריך לעשות.</div></li><li><span class="chk"></span><div><b>מחברים וואטסאפ</b> — סורקים QR מהטלפון, בדיוק כמו וואטסאפ ווב.</div></li><li><span class="chk"></span><div>מחברים מייל ויומן ממסך החיבורים. כל אחד לחשבון שלו.</div></li><li><span class="chk"></span><div>שולחים הודעת בדיקה מהטלפון: "מה יש לי היום ביומן?"</div></li></ol>
+    <div class="note ok"><b>✓ סימן שסיימתם:</b> קיבלתם תשובה מהסוכן בוואטסאפ שלכם. לא ממשיכים לפרומפטים לפני זה.</div>
+
+    <h3>ג. סוכן ראשון — עוזר אישי</h3>
+    <p>הפרומפט הזה לא מבקש ממנו לעשות. הוא מבקש ממנו להכיר אתכם. ככל שתענו בפירוט, ההצעות שלו יהיו שוות יותר.</p>
+    <div class="prompt"><div class="prompt-h"><span>עוזר אישי · פרומפט פתיחה</span>
+    <button class="copy" data-t="p1">העתקה</button></div>
+    <pre id="p1">אני רוצה שתהיה העוזר האישי שלי.
+לפני שאתה מציע לי משהו — תכיר אותי. שאל אותי שאלה-שאלה:
+
+1. מה התפקיד שלי ומה החברה עושה
+2. באילו כלים אני עובד — מייל, יומן, CRM, וואטסאפ
+3. איך נראה יום טיפוסי שלי
+4. עם מי אני עובד הכי הרבה, ומי מחכה לי הכי הרבה
+5. מה לוקח לי הכי הרבה זמן, ומה הכי מעצבן אותי
+
+אחרי שתבין — תחזור אליי עם חמישה דברים שאתה יכול לקחת
+ממני כבר עכשיו, לפי סדר הערך. אל תתחיל לפני שאבחר.</pre></div>
+
+    <h3>ד. סוכן שני — מיילים</h3>
+    <p>שלושה שלבים: קודם הוא <b>לומד</b>, אחר כך הוא <b>ממליץ ואתם מאשרים</b>, ורק בסוף הוא <b>עובד לבד</b>. רוב האנשים מנסים לקפוץ ישר לשלב השלישי — וזו הסיבה שזה לא עובד להם.</p>
+    <div class="prompt"><div class="prompt-h"><span>סוכן מיילים · בניית סקיל אישי</span>
+    <button class="copy" data-t="p2">העתקה</button></div>
+    <pre id="p2">כלל ברזל: אתה לא מוחק שום דבר בלי אישור מפורש — משפט שבו אני אומר: אני מאשר למחוק.
+
+שלב 1 — אתה לומד. תסרוק את התיבה ותבנה רשימה לפי שולח, מהכמות הגדולה לקטנה, עם פירוט הסוגים.
+לדוגמה:  מיילים מגוגל — 47  ·  12 שיווקי  ·  3 התראות אבטחה  ·  32 עדכוני מוצר
+אני אגיד מה לעשות עם כל קבוצה, ואתה תכתוב כל החלטה כחוק בקובץ סקיל בשם email — לא בשיחה.
+
+שלב 2 — אתה ממליץ, אני מאשר. אתה מציע מה לעשות עם כל מייל חדש, ואני מאשר או דוחה.
+כל דחייה שלי — תעדכן את הסקיל כדי שלא תחזור עליה.
+
+שלב 3 — אתה עובד לבד. כשאין לי יותר תיקונים, אתה מבצע את מה שנלמד.
+מחיקה נשארת תמיד באישור מפורש.</pre></div>
+    <div class="note ">שימו לב לכלל הברזל: הוא לא אוסר מחיקה — הוא דורש אישור מפורש. זה ההבדל בין סוכן שאפשר לסמוך עליו לבין סוכן משותק.</div>
+</section>
+<section class="sec" id="meetings">
+  <div class="sec-h"><span>02</span><h2>סיכומי פגישות</h2></div>
+  
+    <div class="note warn"><b>לפני הכול — זו החלטה ארגונית.</b> בוט שנכנס לפגישות ומקליט נוגע בהסכמה להקלטה, במדיניות הארגון ובמידע רגיש. להתנסות היום — רק על פגישה פנימית שלכם. חיבור ליומן הארגוני עובר דרך היועץ המשפטי וה-IT אצלכם.</div>
+    <ol class="steps"><li><span class="chk"></span><div>נרשמים ב-<a href="https://fireflies.ai" target="_blank" rel="noopener">fireflies.ai</a>.</div></li><li><span class="chk"></span><div>מחברים יומן — גוגל או אאוטלוק. מכאן הוא מצטרף לבד לכל פגישה עם לינק וידאו.</div></li><li><span class="chk"></span><div>קובעים שפה: עברית. מי שמערבב עברית ואנגלית — יש מצב רב-לשוני, אך הוא עדיין בבטא.</div></li><li><span class="chk"></span><div>מסיימים פגישה ומקבלים תמלול, סיכום, החלטות ומשימות.</div></li></ol>
+    <div class="note ok"><b>✓ סימן שסיימתם:</b> בפגישה הבאה שלכם הבוט מופיע ברשימת המשתתפים.</div>
+    <div class="note ">התוכנית החינמית מספיקה כדי להתחיל. מי שרוצה יותר — בסביבות 10 דולר לחודש בחיוב שנתי.</div>
+</section>
+<section class="sec" id="claude-install">
+  <div class="sec-h"><span>03</span><h2>התקנת Claude</h2></div>
+  
+    <div class="ostabs"><button class="ostab on" data-os="mac">macOS</button><button class="ostab" data-os="win">Windows</button></div>
+    <div class="osblock"><div class="os-mac"><ol class="steps"><li><span class="chk"></span><div>פותחים <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> ולוחצים על macOS.</div></li><li><span class="chk"></span><div>פותחים את הקובץ שירד מתיקיית ההורדות.</div></li><li><span class="chk"></span><div><b>גוררים את Claude לתיקיית Applications.</b> בלי זה הוא עלול לא להיפתח.</div></li><li><span class="chk"></span><div>פותחים את Claude מתוך Applications ומתחברים לחשבון שלכם.</div></li><li><span class="chk"></span><div>אם מופיעה התראה "האפליקציה הורדה מהאינטרנט" — אשרו פתיחה.</div></li></ol></div><div class="os-win"><ol class="steps"><li><span class="chk"></span><div>פותחים <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> ולוחצים על Windows.</div></li><li><span class="chk"></span><div>מריצים את הקובץ שירד.</div></li><li><span class="chk"></span><div>אם Windows מציג אזהרת SmartScreen — לוחצים "More info" ואז "Run anyway".</div></li><li><span class="chk"></span><div>משלימים את אשף ההתקנה.</div></li><li><span class="chk"></span><div>פותחים את Claude ומתחברים לחשבון שלכם.</div></li></ol></div></div>
+    <div class="note ok"><b>✓ סימן שסיימתם:</b> חלון Claude פתוח, ושם החשבון הנכון מופיע בפינה.</div>
+    <div class="note warn"><b>רק מהאתר הרשמי.</b> ולא משתפים סיסמה או קוד התחברות עם אף אחד — גם לא עם מנטור.</div>
+</section>
+<section class="sec" id="folder">
+  <div class="sec-h"><span>04</span><h2>התיקייה הראשונה</h2></div>
+  
+    <p>לפני שפותחים את Claude Code צריך תיקייה שהוא יעבוד בתוכה.</p>
+    <div class="ostabs"><button class="ostab on" data-os="mac">macOS</button><button class="ostab" data-os="win">Windows</button></div>
+    <div class="osblock"><div class="os-mac"><ol class="steps"><li><span class="chk"></span><div>לוחצים על שולחן העבודה כדי לוודא שהוא במוקד.</div></li><li><span class="chk"></span><div>לוחצים ימני על השולחן ← "New Folder".</div></li><li><span class="chk"></span><div>קוראים לה <code dir="ltr">second-brain</code> ולוחצים Enter.</div></li></ol></div><div class="os-win"><ol class="steps"><li><span class="chk"></span><div>לוחצים ימני על שולחן העבודה.</div></li><li><span class="chk"></span><div>בוחרים New ← Folder.</div></li><li><span class="chk"></span><div>קוראים לה <code dir="ltr">second-brain</code> ולוחצים Enter.</div></li></ol></div></div>
+    <div class="note "><b>ההמלצה של בן:</b> אתם לא בונים אפליקציות — אז תיקייה אחת, „מוח שני", שבה יושב הכול. קלוד כבר יידע לסדר בתוכה. יש לכם פרויקט גדול ונפרד? רק אז תיקייה משלו.</div>
+    <h3>הפרומפט הראשון בתיקייה</h3>
+    <div class="prompt"><div class="prompt-h"><span>Claude Code · פרומפט פתיחה</span>
+    <button class="copy" data-t="p3">העתקה</button></div>
+    <pre id="p3">למד את תיקיית הפרויקט הזאת.
+לפני שאתה משנה קובץ כלשהו:
+1. מפה מה קיים
+2. שאל אותי מה חסר
+3. הצע תוכנית עבודה קצרה
+4. המתן לאישור מפורש שלי</pre></div>
+    <div class="note ok"><b>✓ סימן שסיימתם:</b> Claude הציג מיפוי ותוכנית — ועדיין לא שינה שום קובץ. שינה קבצים? עצרו והרימו יד.</div>
+</section>
+<section class="sec" id="radar">
+  <div class="sec-h"><span>05</span><h2>רדאר · מודיעין תחרותי</h2></div>
+  
+    <p>תיקייה אחת שמייצרת דוח מתחרים כל שבוע. פותחים תיקייה חדשה וריקה, מריצים בה <code dir="ltr">claude</code>, ומדביקים את הפרומפט. מכאן הוא מוביל: מתחקר אתכם, חוקר לבד, בונה את המערכת ומפיק את הדוח הראשון.</p>
+    <div class="prompt"><div class="prompt-h"><span>רדאר · הפרומפט המלא</span>
+    <button class="copy" data-t="p4">העתקה</button></div>
+    <pre id="p4">אתה בונה עכשיו מערכת בשם "רדאר" — מערכת מודיעין תחרותי אישית עבורי.
+
+מה המערכת עושה: פעם בשבוע היא סורקת את המתחרים שלי במקורות ציבוריים,
+מזהה מה השתנה אצלם מאז הסריקה הקודמת, ומפיקה לי דוח HTML מעוצב בעברית
+עם מה שהשתנה, למה זה חשוב לי, ומה כדאי לי לעשות.
+
+אתה מוביל את התהליך מכאן. אני לא טכני, אל תבקש ממני להחליט החלטות טכניות
+ואל תשאיר לי שיעורי בית. תשאל אותי רק על העסק שלי — כל השאר עליך.
+
+עבוד בשלבים הבאים לפי הסדר. אל תדלג קדימה.
+
+═══════════════════════════════════════
+שלב 1 — תחקיר ראשוני
+═══════════════════════════════════════
+
+שאל אותי את חמש השאלות הבאות, כולן יחד, ממוספרות. אל תשאל אותן אחת-אחת.
+
+1. שם החברה, מה היא עושה בשורה אחת, וכתובת האתר.
+2. מי הלקוח שלי, ולמה הוא בוחר בי ולא באחרים? מה המיצוב שלי בשוק?
+3. מי המתחרים שאני מכיר (עד שישה), ומי מהם הכי מדאיג אותי ולמה?
+4. איזו החלטה עסקית הייתי מקבל אחרת אם היה לי מידע טוב יותר על המתחרים?
+5. מי קורא את הדוח — רק אני, ההנהלה, או גם הדירקטוריון?
+
+אם תשובה שלי קצרה או מעורפלת — תחזור אליי פעם אחת ותבקש לחדד,
+במיוחד בשאלות 2 ו-4. הן החשובות ביותר; מהן אתה מבין מה בכלל נחשב ממצא
+מעניין עבורי ומה רעש.
+
+═══════════════════════════════════════
+שלב 2 — מחקר עצמאי (בלעדיי)
+═══════════════════════════════════════
+
+עכשיו תחקור בעצמך, בלי לשאול אותי כלום. תמצא:
+
+א. את החברה שלי — גודל, מיצוב, חדשות אחרונות. ודא שהבנת נכון מה שאמרתי.
+ב. כל מתחרה שנקבתי בשמו — אתר רשמי, גודל, מיצוב, מה חדש אצלו.
+ג. מתחרים שלא הזכרתי אבל כן רלוונטיים — כולל שחקנים חדשים בשוק,
+   מתחרים עקיפים שנוגסים בקטגוריה, ושחקני אונליין. חפש במיוחד רשתות
+   או חברות שהושקו בשנה-שנתיים האחרונות.
+ד. לכל מתחרה — אילו מקורות ציבוריים בכלל זמינים עליו:
+   אתר ודף מבצעים, חדשות, Meta Ad Library (facebook.com/ads/library —
+   ארכיון פומבי של כל המודעות הפעילות של כל מפרסם, פתוח בלי חשבון),
+   ביקורות גוגל, לינקדאין ומשרות פתוחות.
+
+אם מקור כלשהו לא נגיש או לא החזיר תוצאות — תרשום את זה כמו שהוא.
+לעולם אל תמציא עובדה ואל תשלים פערים בניחוש.
+
+═══════════════════════════════════════
+שלב 3 — תחקיר שני, מבוסס על מה שמצאת
+═══════════════════════════════════════
+
+תחזור אליי עם:
+
+א. סיכום קצר של מה שהבנת על החברה שלי — כדי שאאשר שלא פספסת.
+ב. רשימת המתחרים שמצאתי בעצמך ולא הזכרתי, עם שורת הסבר לכל אחד
+   למה הוא רלוונטי. תשאל אותי מי מהם להכניס פנימה ומי לא.
+ג. לאילו מתחרים יש מקורות עשירים ולאילו כמעט אין — כדי שאדע מראש
+   איפה הרדאר יהיה חזק ואיפה חלש.
+ד. רשימת נושאי מעקב לבחירה. הצג אותה כרשימה ממוספרת ובקש שאסמן
+   מה רלוונטי לי:
+   1. מבצעים, מחירים ומהלכי תמחור
+   2. קמפיינים ומודעות פעילות
+   3. סניפים, מוצרים או שירותים חדשים
+   4. כתבות, PR ורגולציה
+   5. ביקורות ותלונות לקוחות
+   6. משרות פתוחות וגיוסים (סיגנל לכיוון האסטרטגי שלהם)
+   7. גיוסי הון, מיזוגים ושינויי בעלות
+   8. מועדון לקוחות, אפליקציה ומהלכי נאמנות
+ה. שאל באיזה טון אני רוצה את הדוח — תמציתי או מפורט.
+
+═══════════════════════════════════════
+שלב 4 — בנה את המערכת
+═══════════════════════════════════════
+
+עכשיו בנה את כל הקבצים בעצמך. אל תשאל אותי שאלות טכניות.
+
+CLAUDE.md — המוח. מה זה רדאר, מי אני, מה המיצוב שלי, מי המתחרים,
+מה נושאי המעקב, וכללי העבודה. כתוב אותו כך שבכל פעם שתיפתח בתיקייה
+הזאת מחדש — תדע מיד מה לעשות ותציע לי סריקה או דוח.
+
+config/company.md — הפרופיל שלי והמתחרים, כפי שסוכם.
+
+dossiers/&lt;שם-מתחרה&gt;.md — תיק לכל מתחרה. זה הזיכרון של המערכת:
+המצב הנוכחי של אותו מתחרה, כל עובדה עם מקור וקישור, ותאריך עדכון אחרון.
+התיקים הם מה שמאפשר לדוח הבא להגיד "מה השתנה" ולא רק "מה קיים".
+
+.claude/agents/competitor-researcher.md — סאב-אייג'נט שחוקר מתחרה אחד
+בלבד ומחזיר ממצאים מובנים עם מקורות. הוא לא כותב קבצים ולא מריץ פקודות.
+
+.claude/skills/scan/SKILL.md — סריקה שבועית: קורא את הקונפיג והתיקים,
+מפעיל תחקירן נפרד לכל מתחרה במקביל, משווה מול התיק הקיים כדי לזהות
+מה חדש, מעדכן את התיקים, ומייצר דוח.
+
+.claude/skills/report/SKILL.md — הפקת דוח מהתיקים בלי סריקה מחדש.
+
+כשסיימת — הסבר לי בשלוש שורות, בשפה פשוטה, מה בנית ואיך אני מפעיל את זה.
+
+═══════════════════════════════════════
+שלב 5 — סריקה ראשונה
+═══════════════════════════════════════
+
+הרץ עכשיו סריקה מלאה. הפעל תחקירן נפרד לכל מתחרה, במקביל,
+וכתוב את הממצאים לתיקים.
+
+זו הסריקה הראשונה ולכן אין מול מה להשוות — הדוח הזה הוא "תמונת מצב פתיחה".
+תגיד לי את זה במפורש, ותסביר שמהסריקה הבאה הדוח יתמקד בשינויים.
+
+═══════════════════════════════════════
+שלב 6 — הדוח
+═══════════════════════════════════════
+
+הפק דוח HTML יחיד, עצמאי, ושמור אותו ב-reports/ לפי תאריך. ואז פתח אותו
+בדפדפן שלי.
+
+תוכן:
+- כותרת עם שם החברה שלי, טווח התאריכים, וסוג הדוח.
+- שלוש התובנות הכי חשובות, חוצות-מתחרים, בראש הדוח.
+- לכל מתחרה עד חמישה ממצאים. כל ממצא בנוי משלוש שורות:
+  מה השתנה / למה זה חשוב לי / מה כדאי לעשות.
+- כל ממצא מסומן באחת משלוש רמות: חשוב, חדש, למעקב.
+- כל ממצא נושא קישור למקור. מתחרה בלי ממצאים — כתוב את זה בפירוש.
+
+עיצוב:
+- עברית, RTL מלא. מונחים באנגלית וקישורים בתוך אלמנט עם dir="ltr".
+- גופן Heebo מ-Google Fonts, עם נפילה לגופן מערכת.
+- רקע בהיר, טקסט כמעט-שחור, וצבע הדגשה יחיד המוגדר כמשתנה CSS בשם
+  --accent, כדי שאוכל למתג בשורה אחת. בלי גרדיאנטים ובלי צללים כבדים.
+- שלוש רמות הסימון בשלושה טיפולים ויזואליים שונים, שנשארים מובחנים
+  גם בהדפסה בשחור-לבן.
+- קריא בנייד, ומוכן להדפסה בגודל A4.
+- בלי אימוג'ים, בשום מקום בדוח.
+
+═══════════════════════════════════════
+שלב 7 — להריץ את זה כל שבוע
+═══════════════════════════════════════
+
+הסבר לי, בשפה פשוטה, שתי דרכים להריץ את הרדאר כל שבוע:
+דרך רוטינה מתוזמנת שרצה מקומית, או פשוט לפתוח את התיקייה ולבקש סריקה.
+תגיד לי בכנות מה המגבלה של האפשרות המתוזמנת — היא רצה רק כשהמחשב פתוח.
+
+═══════════════════════════════════════
+כללי עבודה לאורך כל התהליך
+═══════════════════════════════════════
+
+- עברית בכל מה שאני רואה. בלי אימוג'ים.
+- כל עובדה נושאת מקור עם קישור. לא הגעת למקור — תגיד את זה. אל תמציא.
+- שאלות אליי תמיד בקבוצה אחת ממוספרת, לא אחת-אחת.
+- אל תשאל אותי שאלות טכניות. את ההחלטות הטכניות תקבל לבד.
+- מצאת סתירה בין מקורות, או מידע שנראה מיושן — תגיד לי, אל תבחר בשקט.
+- אם משהו שאמרתי לא מסתדר עם מה שמצאת — תעצור ותשאל.
+
+תתחיל משלב 1.</pre></div>
+    <div class="note "><b>כמה זמן זה לוקח:</b> התחקיר — דקות. הסריקה הראשונה ארוכה יותר. זה זמן עבודה, לא תקיעה.</div>
+    <h3>להריץ את זה כל שבוע</h3>
+    <ol class="steps"><li><span class="chk"></span><div><b>ידני:</b> פותחים את התיקייה פעם בשבוע ומבקשים סריקה. עובד תמיד.</div></li><li><span class="chk"></span><div><b>אוטומטי:</b> רוטינה מקומית שרצה כל יום ראשון — אבל רק כשהמחשב פתוח.</div></li></ol>
+    <div class="note warn">ברוטינות: בחרו במסלול <b>Local</b> מתוך אפליקציית הדסקטופ. רוטינה שנוצרת דרך שורת הפקודה רצה בענן על עותק נקי, בלי הקבצים המקומיים — וזה ישבור את תיקי המתחרים.</div>
+</section>
+<section class="sec" id="links">
+  <div class="sec-h"><span>06</span><h2>כל הקישורים</h2></div>
+  
+    <table class="links">
+      <tr><th>מה</th><th>קישור</th><th>הערה</th></tr>
+      <tr><td>הסוכן בוואטסאפ</td><td><a href="https://base44.pxf.io/c/7338539/3820726/25619?subId1=NC&subId2=Course&sharedid=BL&trafcat=agent" target="_blank" rel="noopener">פתיחת החשבון</a></td><td>30% על מנוי שנתי · גלישה בסתר אם נכנסתם בעבר</td></tr>
+      <tr><td>Claude</td><td><a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a></td><td>הורדה רשמית, מק וּווינדוס</td></tr>
+      <tr><td>סיכומי פגישות</td><td><a href="https://fireflies.ai" target="_blank" rel="noopener">fireflies.ai</a></td><td>תוכנית חינמית מספיקה להתחלה</td></tr>
+      <tr><td>Meta Ad Library</td><td><a href="https://www.facebook.com/ads/library" target="_blank" rel="noopener">facebook.com/ads/library</a></td><td>ארכיון מודעות פומבי, בלי חשבון</td></tr>
+    </table>
+</section>
+<section class="sec" id="stuck">
+  <div class="sec-h"><span>07</span><h2>כשנתקעים</h2></div>
+  
+    <p>לפני שקוראים למנטור — ארבע תשובות. זה חוסך זמן לכולם, וברוב המקרים אתם פותרים תוך כדי.</p>
+    <ol class="steps"><li><span class="chk"></span><div><b>מה רציתי?</b> התוצאה המדויקת והשלב שאני נמצא בו.</div></li><li><span class="chk"></span><div><b>מה עשיתי?</b> הפרומפט, הקובץ, החיבור או הפעולה.</div></li><li><span class="chk"></span><div><b>מה קרה?</b> הפלט או הודעת השגיאה, כלשונה.</div></li><li><span class="chk"></span><div><b>מה ציפיתי?</b> איך תוצאה טובה נראית, ומה כבר ניסיתי.</div></li></ol>
+    <div class="note "><b>קלוד מתבלבל אחרי שיחה ארוכה?</b> זה נורמלי. פתחו שיחה חדשה עם הקשר מרוכז. מה שחשוב לזכור לתמיד — כתבו בקובץ, לא בשיחה.</div>
+</section>
+<footer>nCode × XIMUS · מדריך הסדנה</footer>
+</main>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var el = document.getElementById(b.dataset.t);
+    navigator.clipboard.writeText(el.innerText).then(function(){
+      var o = b.textContent; b.textContent = 'הועתק ✓'; b.classList.add('done');
+      setTimeout(function(){ b.textContent = o; b.classList.remove('done'); }, 1800);
+    });
+  });
+});
+document.querySelectorAll('.ostab').forEach(function(t){
+  t.addEventListener('click', function(){
+    var win = t.dataset.os === 'win';
+    document.body.classList.toggle('win', win);
+    document.querySelectorAll('.ostab').forEach(function(x){ x.classList.toggle('on', (x.dataset.os === 'win') === win); });
+    localStorage.setItem('ximus-os', t.dataset.os);
+  });
+});
+if (localStorage.getItem('ximus-os') === 'win') {
+  document.body.classList.add('win');
+  document.querySelectorAll('.ostab').forEach(function(x){ x.classList.toggle('on', x.dataset.os === 'win'); });
+}
+document.querySelectorAll('ol.steps').forEach(function(list, li){
+  list.querySelectorAll('li').forEach(function(item, ii){
+    var key = 'ximus-chk-' + li + '-' + ii, box = item.querySelector('.chk');
+    if (!box) return;
+    if (localStorage.getItem(key) === '1') { box.classList.add('on'); item.classList.add('done'); }
+    box.addEventListener('click', function(){
+      var on = box.classList.toggle('on');
+      item.classList.toggle('done', on);
+      localStorage.setItem(key, on ? '1' : '0');
+    });
+  });
+});
+</script>
+</body></html>
