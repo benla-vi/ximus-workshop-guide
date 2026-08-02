@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>איך נרשמים ל-Base44 נכון | nCode</title>
+<meta name="description" content="המדריך המלא להרשמה חכמה ל-Base44 — צעד אחר צעד, בלי לפספס כלום.">
+<style>
+  :root{
+    --black:#0a0a0a; --white:#ffffff; --gray:#f4f4f4;
+    --line:#e5e5e5; --muted:#6b6b6b; --accent:#0a0a0a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    background:var(--white); color:var(--black);
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+
+  /* HERO */
+  header{
+    background:var(--black); color:var(--white);
+    padding:64px 0 56px; text-align:center;
+  }
+  .logo{
+    font-weight:800; letter-spacing:2px; font-size:15px;
+    text-transform:uppercase; opacity:.85; margin-bottom:26px;
+  }
+  header h1{font-size:33px; font-weight:800; line-height:1.25; margin-bottom:14px}
+  header p{font-size:17px; opacity:.8; max-width:520px; margin:0 auto}
+
+  /* CTA */
+  .cta-box{
+    background:var(--white); border:2px solid var(--black);
+    border-radius:16px; padding:30px 26px; text-align:center;
+    margin:-34px auto 46px; max-width:560px; position:relative;
+    box-shadow:0 10px 40px rgba(0,0,0,.10);
+  }
+  .cta-box .kick{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .cta-box h2{font-size:21px;margin-bottom:18px}
+  .btn{
+    display:inline-block; background:var(--black); color:var(--white);
+    text-decoration:none; font-weight:800; font-size:18px;
+    padding:16px 40px; border-radius:12px; transition:.2s;
+  }
+  .btn:hover{transform:translateY(-2px);opacity:.9}
+  .btn-note{display:block;margin-top:12px;font-size:13px;color:var(--muted)}
+
+  /* SECTIONS */
+  section{padding:8px 0 20px}
+  .sec-title{font-size:23px;font-weight:800;margin:34px 0 6px;padding-bottom:10px;border-bottom:2px solid var(--black)}
+  .sec-sub{color:var(--muted);font-size:15px;margin-bottom:22px}
+
+  /* STEPS */
+  .step{
+    display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--line);
+  }
+  .step:last-child{border-bottom:none}
+  .num{
+    flex:0 0 40px; height:40px; background:var(--black); color:var(--white);
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:18px;
+  }
+  .step-body h3{font-size:18px;margin-bottom:5px}
+  .step-body p{font-size:15.5px;color:#333}
+  .step-body .why{
+    display:inline-block;margin-top:8px;font-size:13.5px;color:var(--muted);
+    background:var(--gray);padding:5px 12px;border-radius:8px;
+  }
+
+  /* CALLOUT */
+  .callout{
+    background:var(--gray); border-right:4px solid var(--black);
+    padding:18px 20px; border-radius:10px; margin:24px 0; font-size:15.5px;
+  }
+  .callout b{font-weight:800}
+
+  /* CHECKLIST */
+  .check-item{
+    display:flex;align-items:flex-start;gap:11px;padding:11px 0;
+    border-bottom:1px solid var(--line);font-size:15.5px;
+  }
+  .check-item:last-child{border-bottom:none}
+  .box{
+    flex:0 0 22px;height:22px;border:2px solid var(--black);border-radius:6px;margin-top:2px;
+  }
+
+  /* FOOTER */
+  footer{background:var(--black);color:var(--white);text-align:center;padding:44px 22px;margin-top:50px}
+  footer .fcta{margin-bottom:22px}
+  footer .btn{background:var(--white);color:var(--black)}
+  footer .sig{font-size:14px;opacity:.7;margin-top:20px;line-height:1.9}
+
+  @media(max-width:600px){
+    header h1{font-size:26px}
+    .sec-title{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">nCode</div>
+    <h1>איך נרשמים ל-Base44 נכון</h1>
+    <p>המדריך הקצר והמלא — צעד אחר צעד, בלי לפספס כלום. סיימנו את הסדנה, עכשיו זה תורכם לבנות. 🚀</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="cta-box">
+    <div class="kick">התחילו כאן</div>
+    <h2>הירשמו ל-Base44 דרך הלינק שלנו</h2>
+    <a class="btn" href="https://benla.co.il/go/blaze" target="_blank" rel="noopener">להרשמה ל-Base44 ←</a>
+    <span class="btn-note">חשוב: הירשמו דרך הלינק הזה כדי שנוכל ללוות אתכם 🤝</span>
+  </div>
+
+  <section>
+    <div class="sec-title">למה בכלל להקפיד על תהליך?</div>
+    <p class="sec-sub">3 דקות של הקפדה עכשיו = חוסכות לכם כאב ראש וכסף אחר כך.</p>
+    <div class="callout">
+      Base44 מזהה חשבונות לפי מייל ולפי היסטוריית גלישה. אם תירשמו ממייל ישן שכבר "מוכר" למערכת או מדפדפן עם עוגיות ישנות — אתם עלולים <b>לפספס את מסלול ההטבה ואת המנוי הנכון</b>. לכן עובדים נקי: חלון גלישה בסתר + מייל טרי.
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">הטוטוריאל — 6 צעדים</div>
+    <p class="sec-sub">עשו בדיוק לפי הסדר. זה לוקח פחות מ-5 דקות.</p>
+
+    <div class="step">
+      <div class="num">1</div>
+      <div class="step-body">
+        <h3>פתחו חלון גלישה בסתר (Incognito)</h3>
+        <p>בכרום: לחצו על שלוש הנקודות בפינה ← "חלון גלישה בסתר חדש". בספארי: קובץ ← "חלון פרטי חדש". קיצור: Ctrl+Shift+N (מק: Cmd+Shift+N).</p>
+        <span class="why">למה? חלון נקי בלי עוגיות ישנות = הרשמה נקייה בלי בלבול של המערכת.</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div class="step-body">
+        <h3>היכנסו ללינק שלנו מתוך החלון בסתר</h3>
+        <p>העתיקו והדביקו את הלינק לתוך חלון הגלישה בסתר: https://benla.co.il/go/blaze</p>
+        <span class="why">למה? רק כניסה דרך הלינק הזה משייכת אתכם אלינו ומבטיחה שתקבלו ליווי.</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div class="step-body">
+        <h3>הירשמו עם מייל שמעולם לא נרשם ל-Base44</h3>
+        <p>השתמשו במייל טרי לגמרי — לא כזה שכבר ניסיתם איתו בעבר. אם אין לכם, פתחו מייל חדש ב-Gmail (חינם, דקה) ורק אז הירשמו.</p>
+        <span class="why">למה? מייל שכבר "מוכר" למערכת עלול לחסום אתכם ממסלול ההטבה ומהמנוי הנכון.</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">4</div>
+      <div class="step-body">
+        <h3>אמתו את המייל</h3>
+        <p>Base44 ישלח לכם קוד או לינק אימות למייל. פתחו את המייל, לחצו על האימות, וחזרו למסך ההרשמה.</p>
+        <span class="why">למה? בלי אימות החשבון לא נפתח במלואו ולא תוכלו להמשיך למנוי.</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">5</div>
+      <div class="step-body">
+        <h3>בחרו מנוי שנתי (Annual)</h3>
+        <p>במסך התמחור בחרו את החבילה המתאימה לכם — ותמיד סמנו את התשלום <b>השנתי</b>, לא החודשי. המחיר החודשי בפריסה שנתית זול משמעותית.</p>
+        <span class="why">למה? מנוי שנתי חוסך עד ~40% לעומת חודשי, ונותן לכם מספיק קרדיטים לבנות ברצינות.</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">6</div>
+      <div class="step-body">
+        <h3>התחילו לבנות</h3>
+        <p>נכנסתם? מעולה. פתחו פרויקט חדש, כתבו ב-prompt מה אתם רוצים לבנות, ותנו ל-AI לעבוד. זכרו את הכללים מהסדנה — התחילו קטן, בדקו, ואז הרחיבו.</p>
+        <span class="why">זהו — אתם בפנים ובונים. בדיוק בשביל זה עשינו את הסדנה.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">צ'קליסט מהיר לפני שמתחילים</div>
+    <p class="sec-sub">עברו על זה תוך 30 שניות ואתם מוכנים.</p>
+    <div class="check-item"><div class="box"></div><div>פתחתי חלון גלישה בסתר (Incognito)</div></div>
+    <div class="check-item"><div class="box"></div><div>נכנסתי דרך הלינק https://benla.co.il/go/blaze</div></div>
+    <div class="check-item"><div class="box"></div><div>נרשמתי עם מייל חדש שלא השתמשתי בו ב-Base44 בעבר</div></div>
+    <div class="check-item"><div class="box"></div><div>אימתתי את המייל</div></div>
+    <div class="check-item"><div class="box"></div><div>בחרתי מנוי שנתי (לא חודשי)</div></div>
+    <div class="check-item"><div class="box"></div><div>פתחתי פרויקט ראשון והתחלתי לבנות</div></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fcta">
+      <a class="btn" href="https://benla.co.il/go/blaze" target="_blank" rel="noopener">יאללה, בואו נתחיל ←</a>
+    </div>
+    <div class="sig">
+      נבנה עבורכם באהבה על ידי nCode<br>
+      שאלות? אנחנו כאן ללוות אתכם לאורך כל הדרך.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
